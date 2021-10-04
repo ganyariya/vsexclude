@@ -19,7 +19,12 @@ function readSettingJson(filePath: string): ISetting {
   return dict as ISetting;
 }
 
-function readTemplate(filePath: string): ITemplate {}
+async function readTemplate(lang: string): Promise<ITemplate> {
+  const url = `https://raw.githubusercontent.com/ganyariya/vsexclude/main/templates/${lang}.txt`;
+  const result = await fetch(url);
+  console.log(result);
+  return {} as ITemplate;
+}
 
 function appendTemplateToSetting(
   setting: ISetting,
@@ -53,3 +58,5 @@ const template = await getTemplate(lang);
 const appendedSetting = appendTemplateToSetting(setting, template);
 
 await writeJson(settingJsonPath, appendedSetting);
+
+await readTemplate(lang);
