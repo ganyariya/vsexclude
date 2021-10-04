@@ -1,4 +1,5 @@
 import { Command } from "./deps.ts";
+import { runVsExclude } from "./mod.ts";
 
 const { args } = await new Command()
   .name("vsexclude")
@@ -8,3 +9,4 @@ const { args } = await new Command()
   .parse(Deno.args);
 
 const lang: string = args[0];
+await runVsExclude(lang);
