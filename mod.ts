@@ -22,8 +22,10 @@ function readSettingJson(filePath: string): ISetting {
 async function readTemplate(lang: string): Promise<ITemplate> {
   const url = `https://raw.githubusercontent.com/ganyariya/vsexclude/main/templates/${lang}.txt`;
   const result = await fetch(url);
-  console.log(result);
-  return {} as ITemplate;
+  const text = await result.text();
+  const template: ITemplate = {};
+  for (const key of text.trimEnd().split("\n")) template[key] = true;
+  return template;
 }
 
 function appendTemplateToSetting(
@@ -38,11 +40,6 @@ function appendTemplateToSetting(
   return appendedSetting;
 }
 
-async function getTemplate(lang: string): Promise<ITemplate> {
-  const result = await import(`./templates/${lang}.ts`);
-  return result.template;
-}
-
 const currentDirectoryPath = Deno.cwd();
 const vscodeSettingPath = path.join(currentDirectoryPath, ".vscode");
 
@@ -54,9 +51,7 @@ const settingJsonPath = path.join(vscodeSettingPath, "settings.json");
 const setting = await readSettingJson(settingJsonPath);
 
 const lang = "python";
-const template = await getTemplate(lang);
+const template = await readTemplate(lang);
 const appendedSetting = appendTemplateToSetting(setting, template);
 
 await writeJson(settingJsonPath, appendedSetting);
-
-await readTemplate(lang);
