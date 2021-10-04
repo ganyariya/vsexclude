@@ -6,7 +6,7 @@ import { ITemplate } from "./interfaces/itemplate.ts";
 async function readJson(filePath: string): Promise<IDict> {
   try {
     return JSON.parse(await Deno.readTextFile(filePath));
-  } catch (e) {
+  } catch (_) {
     console.log("vsexclude creates .vscode/settings.json.");
     await Deno.writeTextFile(filePath, JSON.stringify({}));
     return {};
