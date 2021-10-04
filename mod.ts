@@ -19,6 +19,8 @@ function readSettingJson(filePath: string): ISetting {
   return dict as ISetting;
 }
 
+function readTemplate(filePath: string): ITemplate {}
+
 function appendTemplateToSetting(
   setting: ISetting,
   template: ITemplate
