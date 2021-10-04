@@ -24,7 +24,10 @@ async function readTemplate(lang: string): Promise<ITemplate> {
   const result = await fetch(url);
   const text = await result.text();
   const template: ITemplate = {};
-  for (const key of text.trimEnd().split("\n")) template[key] = true;
+  for (const key of text.trimEnd().split("\n")) {
+    if (key.length === 0 || key[0] === "#") continue;
+    template[key] = true;
+  }
   return template;
 }
 
