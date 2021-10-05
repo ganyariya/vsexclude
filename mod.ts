@@ -29,8 +29,10 @@ async function readTemplate(lang: string): Promise<ITemplate> {
   const url = `https://raw.githubusercontent.com/ganyariya/vsexclude/main/templates/${lang}.txt`;
   const response = await fetch(url);
   if (!response.ok) {
-    const errorMessage = `\n404 Error: ${lang} does not exist.\nPlease contribute to vsexclude, adding your exclucde template!`;
-    throw new Error(errorMessage);
+    const githubUrl = "https://github.com/ganyariya/vsexclude";
+    const errorMessage = `404 Error: ${lang}-template does not exist.\nPlease contribute to vsexclude, by adding your exclucde template!\n${githubUrl}`;
+    console.log(errorMessage);
+    Deno.exit(1);
   }
   const text = await response.text();
   const template: ITemplate = {};

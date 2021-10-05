@@ -22,7 +22,6 @@
 		"**/*dmypy.json": true,
 		"**/*.mypy_cache": true,
 		"**/.pytype": true,
-		"**/*.manifest": true,
-		"404: Not Found": true
+		"**/*.manifest": true
 	}
 }
