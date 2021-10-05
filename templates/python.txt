@@ -14,5 +14,6 @@
 **/__pypackages__
 **/*dmypy.json
 **/*.mypy_cache
-**/.pytype
+**/*.pytest_cache
 **/__pycache__
+**/.pytype
