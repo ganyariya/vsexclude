@@ -84,8 +84,6 @@ export {
   runVsExclude,
   listTemplatesOnBrowser,
   getVSCodeSettingPath,
-  readSettingJson,
   readJson,
   readTemplate,
-  appendTemplateToSetting,
 };
