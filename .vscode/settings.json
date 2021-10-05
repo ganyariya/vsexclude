@@ -6,8 +6,23 @@
 		"https://deno.land": false
 	},
 	"files.exclude": {
-		"a": true,
-		"b": true,
-		"cde": true
+		"**/*venv": true,
+		"**/*develo-eggs": true,
+		"**/*eggs": true,
+		"**/*wheels": true,
+		"**/*.egg-info": true,
+		"**/*.egg": true,
+		"**/sdist": true,
+		"**/*.spec": true,
+		"**/*.cache": true,
+		"**/*.ipynb_checkpoints": true,
+		"**/profile_default": true,
+		"**/ipython_config.py": true,
+		"**/__pypackages__": true,
+		"**/*dmypy.json": true,
+		"**/*.mypy_cache": true,
+		"**/.pytype": true,
+		"**/*.manifest": true,
+		"404: Not Found": true
 	}
 }
