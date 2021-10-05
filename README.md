@@ -1,5 +1,10 @@
 # 🦕 vsexclude
 
+[![deno.land](https://img.shields.io/badge/deno-%5E1.13.2-green?logo=deno)](https://deno.land)
+[![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
+[![tag](https://img.shields.io/github/v/tag/ganyariya/vsexclude?sort=semver)](https://github.com/ganyariya/vsexclude/tags)
+
+
 <p align="center">
   <img width="400" src="./icon/deno-vsexclude.png">
 </p>
