@@ -15,4 +15,4 @@
 **/*dmypy.json
 **/*.mypy_cache
 **/.pytype
-**__pycache__
+**/__pycache__
