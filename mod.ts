@@ -1,4 +1,4 @@
-import { fs, path } from "./deps.ts";
+import { fs, path, open } from "./deps.ts";
 import { ISetting } from "./interfaces/isetting.ts";
 import { IDict } from "./interfaces/idict.ts";
 import { ITemplate } from "./interfaces/itemplate.ts";
@@ -75,4 +75,9 @@ const runVsExclude = async (lang: string): Promise<void> => {
   await writeJson(settingJsonPath, appendedSetting);
 };
 
-export { runVsExclude };
+const listTemplatesOnBrowser = async (): Promise<void> => {
+  const url = "https://github.com/ganyariya/vsexclude/tree/main/templates";
+  await open(url);
+};
+
+export { runVsExclude, listTemplatesOnBrowser };
