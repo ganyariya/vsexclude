@@ -9,6 +9,9 @@ const config: DenonConfig = {
     mod: {
       cmd: "deno run mod.ts",
     },
+    test: {
+      cmd: "deno test",
+    },
   },
   allow: ["run", "net", "read", "write"],
   unstable: true,
