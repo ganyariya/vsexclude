@@ -80,4 +80,10 @@ const listTemplatesOnBrowser = async (): Promise<void> => {
   await open(url);
 };
 
-export { runVsExclude, listTemplatesOnBrowser };
+export {
+  runVsExclude,
+  listTemplatesOnBrowser,
+  getVSCodeSettingPath,
+  readJson,
+  readTemplate,
+};
